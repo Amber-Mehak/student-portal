@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Login/Register</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
+            overflow: hidden;
+        }
+
+        /* LOGO ANIMATION */
+        .logo {
+            position: absolute;
+            top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeInLogo 1.6s ease-out;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            animation: logoBounce 2s infinite ease-in-out;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        @keyframes logoBounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeInLogo {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* MAIN WRAPPER */
+        .wrapper {
+            width: 400px;
+            padding: 35px 30px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 10px 45px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 1.2s ease-out;
+            transition: 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.94); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .input-box {
+            margin-bottom: 18px;
+        }
+
+        .input-box label {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 13px;
+            background: #0b372b;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #0a2f25;
+        }
+
+        .switch {
+            margin-top: 18px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .switch a {
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* SWITCH ANIMATION */
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- LOGO ANIMATION -->
+    <div class="logo">
+        <div class="logo-circle"></div>
+        <div class="logo-text">MyBrand</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="wrapper" id="loginBox">
+        <h2>Login</h2>
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" />
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button class="btn">Login</button>
+
+        <div class="switch">
+            Don't have an account?
+            <a onclick="showRegister()">Register</a>
+        </div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div class="wrapper hidden" id="registerBox">
+        <h2>Register</h2>
+
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" />
+        </div>
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Create password" />
+        </div>
+
+        <button class="btn">Create Account</button>
+
+        <div class="switch">
+            Already have an account?
+            <a onclick="showLogin()">Login</a>
+        </div>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.getElementById("loginBox").classList.add("hidden");
+            document.getElementById("registerBox").classList.remove("hidden");
+        }
+
+        function showLogin() {
+            document.getElementById("registerBox").classList.add("hidden");
+            document.getElementById("loginBox").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
