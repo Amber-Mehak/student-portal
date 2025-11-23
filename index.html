@@ -4,94 +4,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Student Portal — Demo</title>
+  <title>University of Sindh — Student Portal (Demo)</title>
   <style>
     /* ---------- Reset + base ---------- */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-      background: linear-gradient(160deg,#e6fff3 0%, #d6f7ee 30%, #e8f5ff 100%);
-      color:#0b2b1a; -webkit-font-smoothing:antialiased;padding:18px;
-    }/* ---------- Layout ---------- */
-.container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start}
-
-/* Sidebar */
-.sidebar{background:#072a14;color:#fff;border-radius:12px;padding:18px;height:calc(100vh - 36px);position:sticky;top:18px;box-shadow:0 10px 30px rgba(3,12,6,0.12)}
+      background: linear-gradient(180deg,#eef6ff 0%, #f7fbff 100%);
+      color:#032a58; -webkit-font-smoothing:antialiased;padding:18px;
+    }
+    .container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:20px;align-items:start}/* Sidebar */
+.sidebar{background:#033b88;color:#fff;border-radius:12px;padding:18px;height:calc(100vh - 36px);position:sticky;top:18px;box-shadow:0 12px 30px rgba(3,12,55,0.12)}
 .brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.brand .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#0d6b2a,#0a4a1d);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px;transform-origin:center animation:logoFloat 3s ease-in-out infinite}
-@keyframes logoFloat{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.brand .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#0a3f7a,#033b88);display:flex;align-items:center;justify-content:center;font-weight:800;color:#ffd966;font-size:18px}
 .brand h2{font-size:16px}
 
 .nav{margin-top:12px}
-.nav a{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;color:#cfe8d9;text-decoration:none;margin-bottom:6px}
-.nav a.active, .nav a:hover{background:linear-gradient(90deg,#0a5d23,#0a4a1d);color:#fff}
+.nav a{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;color:#d9e6ff;text-decoration:none;margin-bottom:6px}
+.nav a.active, .nav a:hover{background:linear-gradient(90deg,#022e6b,#02274f);color:#fff}
 
 /* Topbar + main */
 .main{background:transparent}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .search{flex:1;display:flex;gap:12px;align-items:center}
-.search input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(11,31,19,0.12)}
+.search input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(3,12,55,0.08)}
 .userbox{display:flex;align-items:center;gap:12px}
-.avatar{width:44px;height:44px;border-radius:50%;overflow:hidden}
+.avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid #ffd966}
 .avatar img{width:100%;height:100%;object-fit:cover}
 
 /* Dashboard cards grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 8px 20px rgba(9,23,18,0.06);border:1px solid rgba(3,12,6,0.04)}
-.card h3{font-size:15px;margin-bottom:8px}
-.tile{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg,#eaf7ee,#d7f0e0)}
+.card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 8px 20px rgba(3,23,55,0.06);border:1px solid rgba(3,12,55,0.04)}
+.card h3{font-size:15px;margin-bottom:8px;color:#033b88}
+.tile{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg,#eef6ff,#e6f0ff)}
 
 /* responsive */
-@media (max-width:980px){
-  .container{grid-template-columns:1fr}
-  .sidebar{height:auto;position:relative}
-  .grid{grid-template-columns:repeat(2,1fr)}
-}
+@media (max-width:980px){.container{grid-template-columns:1fr}.sidebar{height:auto;position:relative}.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.grid{grid-template-columns:1fr}}
 
 /* Forms */
 .form-row{display:flex;gap:12px}
 .form-row .col{flex:1}
-.input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(11,31,19,0.12)}
+.input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(3,12,55,0.08)}
 .btn{padding:10px 12px;border-radius:10px;border:none;cursor:pointer}
-.btn.primary{background:linear-gradient(90deg,#0d6b2a,#0a4a1d);color:#fff;font-weight:700}
-.btn.ghost{background:#f3fff7;border:1px solid rgba(11,31,19,0.06)}
+.btn.primary{background:linear-gradient(90deg,#033b88,#022e6b);color:#fff;font-weight:700}
+.btn.ghost{background:#f3f7ff;border:1px solid rgba(3,12,55,0.06)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #eef3ff;text-align:left}
+th{background:#f6fbff;color:#022e6b}
 
 /* Modal login/register */
-.overlay{position:fixed;inset:0;background:rgba(2,10,5,0.4);display:flex;align-items:center;justify-content:center;z-index:50}
-.modal{width:420px;max-width:95%;border-radius:12px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.96),#fff);box-shadow:0 18px 50px rgba(3,12,6,0.4)}
+.overlay{position:fixed;inset:0;background:rgba(2,10,30,0.45);display:flex;align-items:center;justify-content:center;z-index:50}
+.modal{width:520px;max-width:95%;border-radius:12px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);box-shadow:0 18px 50px rgba(3,12,55,0.4)}
 .modal h2{margin-bottom:6px}
 .modal .switch{display:flex;gap:8px;margin-bottom:12px}
 .modal .error{background:#ffecec;color:#7a0000;padding:10px;border-radius:8px}
 
-/* small helpers */
-.muted{color:rgba(3,12,6,0.6)}
+.muted{color:rgba(3,12,55,0.6)}
 .center{text-align:center}
+
+/* small helper colors for Sindh uni */
+.gold{color:#ffd966}
+.badge{display:inline-block;padding:6px 8px;border-radius:999px;background:#ffd966;color:#022e6b;font-weight:700}
 
   </style>
 </head>
-<body>  <div class="container">
+<body>
+  <div class="container">
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand">
-        <div class="logo">SP</div>
+        <div class="logo">SU</div>
         <div>
-          <h2>Student Portal</h2>
-          <div class="muted" style="font-size:13px">University demo</div>
+          <h2>University of Sindh</h2>
+          <div class="muted" style="font-size:13px">Student Portal — Demo</div>
         </div>
-      </div><nav class="nav" aria-label="Main navigation">
-    <a href="#" class="active" data-section="dashboard">Dashboard</a>
-    <a href="#" data-section="lms">LMS Dashboard</a>
-    <a href="#" data-section="attendance">Attendance</a>
-    <a href="#" data-section="results">Results</a>
-    <a href="#" data-section="fees">Fees</a>
-    <a href="#" data-section="profile">Profile</a>
-    <a href="#" id="logoutLink">Logout</a>
-  </nav>
-</aside>
-
-<!-- MAIN -->
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#" class="active" data-section="dashboard">Dashboard</a>
+        <a href="#" data-section="lms">LMS</a>
+        <a href="#" data-section="attendance">Attendance</a>
+        <a href="#" data-section="results">Results</a>
+        <a href="#" data-section="fees">Fees</a>
+        <a href="#" data-section="downloads">Downloads</a>
+        <a href="#" data-section="profile">Profile</a>
+        <a href="#" id="logoutLink">Logout</a>
+      </nav>
+    </aside><!-- MAIN -->
 <main class="main">
   <div class="topbar">
     <div class="search">
@@ -109,8 +111,8 @@
       <div class="card">
         <h3>Quick Links</h3>
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
-          <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#eaf7ee,#d7f0e0)"></div><div>Choose Program</div></div>
-          <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#fff1e6,#ffe0cc)"></div><div>Virtual Classroom</div></div>
+          <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#e8f1ff,#d7e7ff)"></div><div>Choose Program</div></div>
+          <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#fff6e6,#ffeccf)"></div><div>Virtual Classroom</div></div>
           <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#eaf2ff,#d7e7ff)"></div><div>Exams / Results</div></div>
           <div class="tile"><div style="width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,#eaf7ee,#d7f0e0)"></div><div>Downloads</div></div>
         </div>
@@ -130,33 +132,99 @@
 
       <div class="card">
         <h3>Announcements</h3>
-        <div class="muted">No new announcements. This panel shows important circulars and university notices.</div>
+        <div class="muted" id="announcements">No new announcements. This panel shows important circulars and university notices.</div>
       </div>
 
       <div class="card" style="grid-column:span 2">
         <h3>My Courses</h3>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-          <div class="tile" style="min-width:140px">Computer Networks</div>
-          <div class="tile" style="min-width:140px">Data Structures</div>
-          <div class="tile" style="min-width:140px">Database Systems</div>
-          <div class="tile" style="min-width:140px">Web Development</div>
-        </div>
+        <div id="coursesList" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"></div>
       </div>
 
       <div class="card">
         <h3>Fees Status</h3>
-        <div class="muted">No pending fees for demo user.</div>
+        <div class="muted" id="feesSummary">No pending fees for demo user.</div>
       </div>
 
       <div class="card">
-        <h3>Attendance</h3>
-        <div class="muted">Attendance percentage will appear here.</div>
+        <h3>Attendance Summary</h3>
+        <div class="muted" id="attendanceSummary">Attendance percentage will appear here.</div>
       </div>
 
     </div>
   </section>
 
-  <!-- Additional sections hidden by default -->
+  <!-- LMS -->
+  <section id="lms" class="section" style="display:none;margin-top:10px">
+    <div class="card">
+      <h3>LMS Dashboard</h3>
+      <div style="margin-top:10px">
+        <div style="display:flex;gap:10px;align-items:center">
+          <input id="newCourse" class="input" placeholder="Add course (e.g. Web Development)" />
+          <button id="addCourseBtn" class="btn primary">Add</button>
+        </div>
+        <div id="lmsCourses" style="margin-top:12px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attendance -->
+  <section id="attendance" class="section" style="display:none;margin-top:10px">
+    <div class="card">
+      <h3>Attendance</h3>
+      <div style="margin-top:10px">
+        <div style="display:flex;gap:10px">
+          <select id="attCourse" class="input"></select>
+          <input id="attDate" type="date" class="input" />
+          <select id="attStatus" class="input"><option value="present">Present</option><option value="absent">Absent</option></select>
+          <button id="addAtt" class="btn primary">Add</button>
+        </div>
+        <div style="margin-top:12px">
+          <table id="attTable"><thead><tr><th>Date</th><th>Course</th><th>Status</th></tr></thead><tbody></tbody></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Marks -->
+  <section id="results" class="section" style="display:none;margin-top:10px">
+    <div class="card">
+      <h3>Results & Marks</h3>
+      <div style="margin-top:10px">
+        <div style="display:flex;gap:10px;align-items:center">
+          <select id="resCourse" class="input"></select>
+          <input id="resTitle" class="input" placeholder="Assessment (Midterm / Final)" />
+          <input id="resMarks" class="input" type="number" placeholder="Marks" />
+          <button id="addRes" class="btn primary">Add</button>
+        </div>
+        <div style="margin-top:12px">
+          <table id="resTable"><thead><tr><th>Course</th><th>Assessment</th><th>Marks</th></tr></thead><tbody></tbody></table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fees -->
+  <section id="fees" class="section" style="display:none;margin-top:10px">
+    <div class="card">
+      <h3>Fees</h3>
+      <div style="margin-top:10px">
+        <div id="feesList"></div>
+        <div style="margin-top:12px"><button id="payAll" class="btn primary">Pay Selected (Demo)</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section id="downloads" class="section" style="display:none;margin-top:10px">
+    <div class="card">
+      <h3>Downloads</h3>
+      <div style="margin-top:10px">
+        <div id="downloadsList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile -->
   <section id="profile" class="section" style="display:none;margin-top:10px">
     <div class="card">
       <h3>Profile Details</h3>
@@ -165,6 +233,7 @@
         <div class="col"><label>Student ID</label><input id="pfId" class="input"/></div>
       </div>
       <div style="margin-top:10px"><label>Course</label><input id="pfCourse" class="input"/></div>
+      <div style="margin-top:10px"><label>Email</label><input id="pfEmail" class="input" disabled/></div>
       <div style="margin-top:10px"><button class="btn primary" id="saveProfile">Save Profile</button></div>
     </div>
   </section>
@@ -178,17 +247,16 @@
         <button class="btn ghost" id="showLogin">Login</button>
         <button class="btn ghost" id="showRegister">Register</button>
       </div>
-      <div id="authError" style="display:none" class="error"></div><form id="authForm">
-    <div id="registerPanel" style="display:none">
-      <label>Full name</label>
-      <input id="rName" class="input" />
-      <label>Student ID</label>
-      <input id="rId" class="input" />
-      <label>Course</label>
-      <input id="rCourse" class="input" />
-    </div>
-
-    <label>Email</label>
+      <div id="authError" style="display:none" class="error"></div>
+      <form id="authForm">
+        <div id="registerPanel" style="display:none">
+          <label>Full name</label>
+          <input id="rName" class="input" />
+          <label>Student ID</label>
+          <input id="rId" class="input" />
+          <label>Course</label>
+          <input id="rCourse" class="input" />
+        </div><label>Email</label>
     <input id="rEmail" class="input" type="email" required />
     <label>Password</label>
     <input id="rPassword" class="input" type="password" required minlength="6" />
@@ -213,14 +281,33 @@
     const authError = document.getElementById('authError');
     const authSubmit = document.getElementById('authSubmit');
 
-    // Load/save users in localStorage for demo
+    // localStorage helpers for demo
     function loadUsers(){try{return JSON.parse(localStorage.getItem('students')||'[]')}catch(e){return[]}}
     function saveUsers(u){localStorage.setItem('students',JSON.stringify(u))}
 
-    // Seed demo user
-    (function seed(){const u=loadUsers();if(!u.find(x=>x.email==='student@example.edu')){u.push({email:'student@example.edu',password:'password123',name:'Demo Student',id:'S2023001',course:'Public Administration'});saveUsers(u)}})();
+    // seed demo user (as requested)
+    (function seed(){
+      const u = loadUsers();
+      if(!u.find(x=>x.email==='mehakjatoi4@gmail.com')){
+        u.push({email:'mehakjatoi4@gmail.com',password:'mehak123',name:'Mehak Jatoi',id:'S2025001',course:'Public Administration'});
+        saveUsers(u);
+      }
+      // also seed some demo courses, fees, downloads
+      if(!localStorage.getItem('su_courses')){
+        const courses=['Computer Networks','Data Structures','Database Systems','Web Development'];
+        localStorage.setItem('su_courses',JSON.stringify(courses));
+      }
+      if(!localStorage.getItem('su_fees')){
+        const fees=[{title:'Tuition Fee - Semester',amount:45000,paid:false},{title:'Library Fine',amount:500,paid:false}];
+        localStorage.setItem('su_fees',JSON.stringify(fees));
+      }
+      if(!localStorage.getItem('su_downloads')){
+        const dls=[{name:'Academic Calendar','file:'#'},{name:'Syllabus - Web Dev','file:'#'}];
+        localStorage.setItem('su_downloads',JSON.stringify(dls));
+      }
+    })();
 
-    // Show register or login
+    // UI mode
     function setMode(m){
       if(m==='register'){registerPanel.style.display='block';authSubmit.textContent='Register';modalTitle.textContent='Create an account'}
       else {registerPanel.style.display='none';authSubmit.textContent='Login';modalTitle.textContent='Login to Student Portal'}
@@ -231,7 +318,7 @@
     setMode('login');
 
     // Demo fill
-    document.getElementById('demoFill').addEventListener('click',()=>{document.getElementById('rEmail').value='student@example.edu';document.getElementById('rPassword').value='password123'})
+    document.getElementById('demoFill').addEventListener('click',()=>{document.getElementById('rEmail').value='mehakjatoi4@gmail.com';document.getElementById('rPassword').value='mehak123'})
 
     // Submit handler
     authForm.addEventListener('submit',e=>{
@@ -252,11 +339,12 @@
       }
       // login
       const found=users.find(u=>u.email===email && u.password===password);
-      if(!found){showAuthError('Invalid credentials. Use demo: student@example.edu / password123');return}
+      if(!found){showAuthError('Invalid credentials. Use demo: mehakjatoi4@gmail.com / mehak123');return}
       // set current user
       sessionStorage.setItem('currentUser',JSON.stringify(found));
       authModal.style.display='none';
       applyUser(found);
+      loadAllUI();
     });
 
     function showAuthError(msg){authError.style.display='block';authError.textContent=msg}
@@ -266,7 +354,8 @@
       document.getElementById('welcomeText').textContent = 'Welcome, ' + (user.name || user.email);
       document.getElementById('profileName').textContent = (user.name || user.email);
       document.getElementById('profileCourse').textContent = (user.course || '—');
-      document.getElementById('welcomeText').style.color='#094522';
+      document.getElementById('pfEmail').value = user.email || '';
+      document.getElementById('welcomeText').style.color='#022e6b';
       // avatar placeholder
       document.getElementById('profileImg').src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"><rect fill="%23f3fff7" width="100%"/></svg>';
     }
@@ -284,12 +373,13 @@
       cu.name = document.getElementById('pfName').value.trim(); cu.id = document.getElementById('pfId').value.trim(); cu.course = document.getElementById('pfCourse').value.trim();
       // update storage users
       const users = loadUsers(); const idx = users.findIndex(u=>u.email===cu.email); if(idx>=0){users[idx]=cu; saveUsers(users); sessionStorage.setItem('currentUser',JSON.stringify(cu)); applyUser(cu); alert('Profile saved (demo)')} else {alert('User not found')}
+      loadAllUI();
     });
 
     // On load, open modal if not logged in
     window.addEventListener('load', ()=>{
       const cu = JSON.parse(sessionStorage.getItem('currentUser')||'null');
-      if(cu){applyUser(cu); authModal.style.display='none'} else {authModal.style.display='flex'}
+      if(cu){applyUser(cu); authModal.style.display='none'; loadAllUI()} else {authModal.style.display='flex'}
     });
 
     // Close modal on click outside
@@ -298,5 +388,158 @@
     // quick keyboard: press L to open login
     window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='l'){authModal.style.display='flex'} });
 
-  </script></body>
-</html>
+    // ---------- Portal features (attendance, results, fees, courses) ----------
+    function loadAllUI(){
+      loadCoursesToUI();
+      loadAttendanceUI();
+      loadResultsUI();
+      loadFeesUI();
+      loadDownloadsUI();
+      calcAttendanceSummary();
+      renderCoursesList();
+    }
+
+    // Courses
+    function getCourses(){return JSON.parse(localStorage.getItem('su_courses')||'[]')}
+    function saveCourses(c){localStorage.setItem('su_courses',JSON.stringify(c))}
+    function loadCoursesToUI(){
+      const courses = getCourses();
+      const attCourse = document.getElementById('attCourse'); const resCourse = document.getElementById('resCourse'); const newCourse = document.getElementById('newCourse');
+      attCourse.innerHTML=''; resCourse.innerHTML='';
+      courses.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;attCourse.appendChild(o);const o2=o.cloneNode(true);resCourse.appendChild(o2)});
+      document.getElementById('lmsCourses').innerHTML = courses.map(c=>`<div style="padding:10px;border-radius:8px;background:#f6fbff;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center"><div><strong>${c}</strong><div class=\"muted\">Course materials & notices</div></div><div><button class=\"btn ghost\" onclick=\"addMaterial('${escapeForAttr(c)}')\">Add Material</button></div></div>`).join('')
+    }
+
+    document.getElementById('addCourseBtn').addEventListener('click',()=>{
+      const v=document.getElementById('newCourse').value.trim(); if(!v) return; const c=getCourses(); c.push(v); saveCourses(c); document.getElementById('newCourse').value=''; loadCoursesToUI(); renderCoursesList();
+    });
+
+    // helper to escape single quotes for inline handlers
+    function escapeForAttr(s){return s.replace(/'/g, "\'")}
+
+    // LMS materials (simple list per course)
+    function addMaterial(course){const name = prompt('Material title (demo)'); if(!name) return; const key = 'materials_'+course; const arr = JSON.parse(localStorage.getItem(key)||'[]'); arr.push({title:name,uploaded:new Date().toLocaleString()}); localStorage.setItem(key,JSON.stringify(arr)); alert('Material added (demo)'); loadDownloadsUI();}
+
+    // Downloads
+    function loadDownloadsUI(){const d = JSON.parse(localStorage.getItem('su_downloads')||'[]'); const list=document.getElementById('downloadsList'); list.innerHTML = d.map((x,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:#f9fbff;margin-bottom:6px"><div><strong>${x.name}</strong><div class=\"muted\">File available</div></div><div><a class=\"btn ghost\" href=\"#\" onclick=\"alert('Download demo: ${x.name}')\">Download</a></div></div>`).join('');
+      // also add materials from courses
+      const courses = getCourses(); courses.forEach(c=>{const mats = JSON.parse(localStorage.getItem('materials_'+c)||'[]'); mats.forEach(m=>{list.innerHTML += `<div style=\"display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:#fffef6;margin-bottom:6px\"><div><strong>${m.title}</strong><div class=\"muted\">${c} — ${m.uploaded}</div></div><div><a class=\"btn ghost\" href=\"#\" onclick=\"alert('Download material: ${m.title}')\">Download</a></div></div>`})})
+    }
+
+    // Courses list on dashboard
+    function renderCoursesList(){const courses=getCourses(); const el=document.getElementById('coursesList'); el.innerHTML = courses.map(c=>`<div class=\"tile\" style=\"min-width:140px\">${c}</div>`).join('')}
+
+    // Attendance storage
+    function getAttendance(){return JSON.parse(localStorage.getItem('su_attendance')||'[]')}
+    function saveAttendance(a){localStorage.setItem('su_attendance',JSON.stringify(a))}
+    document.getElementById('addAtt').addEventListener('click',()=>{
+      const course=document.getElementById('attCourse').value; const date=document.getElementById('attDate').value; const status=document.getElementById('attStatus').value;
+      if(!course||!date) {alert('Select course and date'); return}
+      const a=getAttendance(); a.push({course,date,status}); saveAttendance(a); loadAttendanceUI(); calcAttendanceSummary();
+    });
+    function loadAttendanceUI(){const a=getAttendance(); const tbody=document.querySelector('#attTable tbody'); tbody.innerHTML = a.map(x=>`<tr><td>${x.date}</td><td>${x.course}</td><td>${x.status}</td></tr>`).join('')}
+
+    function calcAttendanceSummary(){
+      const a=getAttendance(); const courses=getCourses(); if(a.length===0){document.getElementById('attendanceSummary').textContent='No attendance records yet.'; return}
+      const byCourse={}; a.forEach(r=>{byCourse[r.course]=byCourse[r.course]||{present:0,total:0}; if(r.status==='present') byCourse[r.course].present++; byCourse[r.course].total++;});
+      let html=''; Object.keys(byCourse).forEach(c=>{const b=byCourse[c]; const pct = Math.round((b.present/b.total)*100); html += `<div><strong>${c}</strong> — ${pct}% (${b.present}/${b.total})</div>`});
+      document.getElementById('attendanceSummary').innerHTML = html;
+    }
+
+    // Results storage
+    function getResults(){return JSON.parse(localStorage.getItem('su_results')||'[]')}
+    function saveResults(r){localStorage.setItem('su_results',JSON.stringify(r))}
+    document.getElementById('addRes').addEventListener('click',()=>{
+      const course=document.getElementById('resCourse').value; const title=document.getElementById('resTitle').value.trim(); const marks=Number(document.getElementById('resMarks').value);
+      if(!course||!title||isNaN(marks)){alert('Fill all fields');return}
+      const r=getResults(); r.push({course,title,marks}); saveResults(r); loadResultsUI();
+    });
+    function loadResultsUI(){const r=getResults(); const tbody=document.querySelector('#resTable tbody'); tbody.innerHTML = r.map(x=>`<tr><td>${x.course}</td><td>${x.title}</td><td>${x.marks}</td></tr>`).join('')}
+
+    // Fees
+    function getFees(){return JSON.parse(localStorage.getItem('su_fees')||'[]')}
+    function saveFees(f){localStorage.setItem('su_fees',JSON.stringify(f))}
+    function loadFeesUI(){const f=getFees(); const el=document.getElementById('feesList'); el.innerHTML = f.map((x,i)=>`<div style=\"display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:#fff;margin-bottom:6px\"><div><strong>${x.title}</strong><div class=\"muted\">Amount: Rs ${x.amount}</div></div><div><label><input type=\"checkbox\" data-idx=\"${i}\" ${x.paid? 'checked disabled': ''}/> ${x.paid?'<span class=\"badge\">PAID</span>':'Pay'}</label></div></div>`).join('');
+      document.getElementById('feesSummary').textContent = f.filter(x=>!x.paid).length? 'You have pending fees.' : 'No pending fees.';
+    }
+    document.getElementById('payAll').addEventListener('click',()=>{
+      const f=getFees(); f.forEach(x=>x.paid=true); saveFees(f); loadFeesUI(); alert('Fees marked paid (demo)');
+    });
+
+    // Misc: announcements
+    function addAnnouncement(text){const a = JSON.parse(localStorage.getItem('su_ann')||'[]'); a.unshift({text,at:new Date().toLocaleString()}); localStorage.setItem('su_ann',JSON.stringify(a)); renderAnnouncements();}
+    function renderAnnouncements(){const a = JSON.parse(localStorage.getItem('su_ann')||'[]'); document.getElementById('announcements').innerHTML = a.length? a.map(x=>`<div style=\"margin-bottom:6px\"><strong>${x.at}</strong><div class=\"muted\">${x.text}</div></div>`).join('') : 'No new announcements.'}
+
+    // small search
+    document.getElementById('globalSearch').addEventListener('input',(e)=>{
+      const q = e.target.value.toLowerCase(); if(!q) return renderCoursesList(); const courses=getCourses().filter(c=>c.toLowerCase().includes(q)); document.getElementById('coursesList').innerHTML = courses.map(c=>`<div class=\"tile\" style=\"min-width:140px\">${c}</div>`).join('')
+    });
+
+    // initial UI load helper
+    function loadAllAtStart(){loadCoursesToUI(); loadAttendanceUI(); loadResultsUI(); loadFeesUI(); loadDownloadsUI(); renderAnnouncements(); renderCoursesList();}
+    loadAllAtStart();
+
+    // helper exposed for inline button (safe enough in demo)
+    window.addMaterial = addMaterial;
+
+  </script><script>
+// Override login to accept ANY password
+window.validateLogin = function() {
+  const email = document.getElementById('loginEmail')?.value.trim();
+  const users = JSON.parse(localStorage.getItem('users') || '{}');
+  if (!users[email]) {
+    alert('Email not found! Please register first.');
+    return;
+  }
+  sessionStorage.setItem('activeUser', email);
+  if (typeof closeModal === 'function') closeModal('authModal');
+  if (typeof loadDashboard === 'function') loadDashboard();
+};
+</script><script>
+// --- USER SYSTEM UPGRADE ---
+// Each email = its own full dataset (attendance, marks, fees, timetable)
+// Registration auto‑creates full empty profile
+
+function registerUser() {
+  const email = document.getElementById('regEmail')?.value.trim();
+  if (!email) { alert('Please enter email'); return; }
+
+  let users = JSON.parse(localStorage.getItem('users') || '{}');
+
+  if (!users[email]) {
+    users[email] = {
+      attendance: [],
+      marks: [],
+      fees: [],
+      timetable: [],
+      profile: { name: '', department: '', roll: '' }
+    };
+  }
+
+  localStorage.setItem('users', JSON.stringify(users));
+  alert('Account created for: ' + email);
+}
+
+// After login, load all data belonging only to that email
+function loadDashboard() {
+  const email = sessionStorage.getItem('activeUser');
+  if (!email) return;
+
+  let users = JSON.parse(localStorage.getItem('users') || '{}');
+  let u = users[email];
+  if (!u) return;
+
+  // Example UI injection (replace when actual dashboard exists)
+  const main = document.querySelector('main');
+  if (main) {
+    main.innerHTML = `
+      <div class='card'><h3>Welcome, ${email}</h3></div>
+      <div class='card'><h3>Attendance Records</h3>${u.attendance.length} items</div>
+      <div class='card'><h3>Marks</h3>${u.marks.length} entries</div>
+      <div class='card'><h3>Fees</h3>${u.fees.length} challans</div>
+      <div class='card'><h3>Timetable</h3>${u.timetable.length} classes</div>
+    `;
+  }
+}
+</script></body>
+  </html>
